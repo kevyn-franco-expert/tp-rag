@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Therapist RAG System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Therapist RAG System</h1>
+            <p>AI-Powered Guidance for Mental Health Professionals</p>
+        </header>
+
+        <div class="warning">
+            <strong>IMPORTANT:</strong> This is a Proof of Concept. Always use professional judgment.
+        </div>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('search')">Search Cases</button>
+            <button class="tab-button" onclick="showTab('guidance')">Get Guidance</button>
+        </div>
+
+        <div id="search" class="tab-content active">
+            <div class="card">
+                <h2>Search Similar Cases</h2>
+                <form id="search-form">
+                    <textarea 
+                        id="search-query" 
+                        placeholder="Describe the case or symptoms..."
+                        rows="3"
+                        required
+                    ></textarea>
+                    
+                    <button type="submit">Search Cases</button>
+                </form>
+            </div>
+            
+            <div id="search-results"></div>
+        </div>
+
+        <div id="guidance" class="tab-content">
+            <div class="card">
+                <h2>Generate Therapeutic Guidance</h2>
+                <form id="guidance-form">
+                    <textarea 
+                        id="patient-context" 
+                        placeholder="Patient context and situation..."
+                        rows="3"
+                        required
+                    ></textarea>
+                    
+                    <textarea 
+                        id="therapist-question" 
+                        placeholder="Your specific question..."
+                        rows="2"
+                        required
+                    ></textarea>
+                    
+                    <button type="submit">Generate Guidance</button>
+                </form>
+            </div>
+            
+            <div id="guidance-results"></div>
+        </div>
+    </div>
+
+    <div id="loading" class="loading">
+        <div class="spinner"></div>
+        <p>Processing...</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
